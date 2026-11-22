@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.10-ru.4 — 2026-11-22
+
+### Added
+
+- Own `main` panel under the key `plugin-whale` and a `sidebar.panellist` row
+  `plugin-whale`: a click in the left rail now opens the pet settings page itself
+  (centred 960 px page with the 🐳 header) instead of the plugin-manager page with
+  description, source and version.
+- The panel row is registered only while the panel is pinned in
+  `localStorage["dsh-polish:panel-visibility"]`; the main panel is always
+  registered. `dsh-polish:panels-changed` and `storage` re-sync the row without a
+  reload.
+- Tests: `tests/plugin-panel.test.mjs` covers the panel content, pin-driven row,
+  id/key match and event reaction.
+
 ## 0.2.10 — 2026-11-22
 
 ### Changed
