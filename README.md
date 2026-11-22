@@ -244,3 +244,12 @@ dsh plugin --profile desktop add github:mikhailnarzik-source/dsh-whale-pet
 оставлено прежним, чтобы он вставал на место оригинала без правок профиля.
 
 Сборка не требуется: файлы плагина уже собраны и лежат в пакете.
+
+## Прокрутка страниц
+
+Кит-помощник: корень `[data-dsh-pet-page]` (секция `plugins.detail.section`) и прокручиваемая оболочка main-панели `[data-dsh-whale-panel]` прокручивается по вертикали, если контент выше окна. Корень не имеет фиксированной высоты в px:
+`box-sizing:border-box; width:100%; min-height:0; max-height:100%; overflow-y:auto; overscroll-behavior:contain; padding-bottom` (+ `flex:1 1 auto` для flex-родителя), вложенные блоки с `max-height` прокручиваются внутри.
+
+Проверено headless на высотах окна 700/800 px и ширинах 1280/1024/768/480 px: страница докручивается до последнего элемента (`bottomReachable`), горизонтальной прокрутки страницы нет.
+
+Тест: `node --test tests/scroll.test.mjs`.
