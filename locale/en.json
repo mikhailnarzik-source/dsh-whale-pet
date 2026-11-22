@@ -1,6 +1,7 @@
 {
   "meta": {
     "title": "Whale Companion",
-    "description": "Your little whale buddy for work, wins, and well-earned naps."
+    "description": "A little whale lives in your DSH window: it rests while you think, works alongside the assistant, celebrates finished tasks and naps when you step away. Drag it, shrink it or hide it, and bring it back with one button. Right-click the whale to open its settings.",
+    "detail": "docs/DETAIL.md"
   }
 }
