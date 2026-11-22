@@ -159,13 +159,23 @@ test('карточки-секции и настройки питомца', () =>
   const reset = collect(page, (node) => node.props?.['data-dsh-pet-button'] === 'secondary')
   assert.equal(reset.length, 1, 'кнопка сброса позиции на месте')
   assert.match(textOf(reset[0]), /Сбросить позицию/, 'подпись кнопки из словаря')
+  assert.equal(reset[0].props.style.height, 36, 'secondary — 36 px')
+  assert.equal(reset[0].props.style.padding, '0 14px', 'padding 0 14')
+  assert.equal(reset[0].props.style.borderRadius, 10, 'радиус 10')
+  assert.equal(reset[0].props.style.whiteSpace, 'nowrap', 'ширина по тексту')
+  assert.doesNotMatch(JSON.stringify(reset[0].props.style), /#fff/, 'нет белого текста')
 })
 
 test('адаптив и сводный режим', () => {
   const styles = collect(page, (node) => node.type === 'style')
   const css = styles.map((node) => node.children?.join('') ?? '').join('\n')
-  assert.match(css, /@media \(max-width: 760px\)/, 'адаптив под узкий экран')
+  assert.match(css, /@media \(max-width: 900px\)/, 'адаптив под средний экран')
+  assert.match(css, /@media \(max-width: 640px\)/, 'адаптив под узкий экран')
   assert.match(css, /\[data-dsh-pet-page\]\{padding:18px 16px 32px/, 'на узком экране меньше отступы')
+  assert.match(css, /\[data-dsh-pet-grid\]\{grid-template-columns:1fr !important\}/, 'на 900 px сетка в одну колонку')
+  assert.match(css, /\[data-dsh-pet-card\] > \*:last-child\{margin-top:auto\}/, 'футер карточки прижат к низу')
+  assert.match(css, /\[data-dsh-pet-button="refresh"\]:hover/, 'hover кнопки «Обновить» описан')
+  assert.match(css, /\[data-dsh-pet-button\]\{max-width:100%\}/, 'на 640 px кнопки не шире строки')
 
   const summaryNode = DetailSection({
     subject: { kind: 'bundle', pkg: { name: 'dsh-plugin-whale-pet' } },

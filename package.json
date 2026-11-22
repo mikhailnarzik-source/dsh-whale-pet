@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-whale-pet",
-  "version": "0.2.9-ru.3",
+  "version": "0.2.10-ru.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yifffan/dsh-plugin-whale-pet.git"
@@ -10,7 +10,7 @@
     "url": "https://github.com/Yifffan/dsh-plugin-whale-pet/issues"
   },
   "packageManager": "pnpm@11.7.0",
-  "description": "Кит-помощник с русскими надписями: русская локализация форка dsh-plugin-whale-pet",
+  "description": "РљРёС‚-РїРѕРјРѕС‰РЅРёРє СЃ СЂСѓСЃСЃРєРёРјРё РЅР°РґРїРёСЃСЏРјРё: СЂСѓСЃСЃРєР°СЏ Р»РѕРєР°Р»РёР·Р°С†РёСЏ С„РѕСЂРєР° dsh-plugin-whale-pet",
   "icon": "./assets/icon.svg",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",

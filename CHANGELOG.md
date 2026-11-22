@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.10 — 2026-11-22
+
+### Changed
+
+- Plugin page follows the unified button system: primary is a soft brand fill (18 %) with
+  brand border and brand text instead of a solid brand fill with light text, secondary and
+  header buttons are 32/36 px with 10 px radius and text width, and hover/disabled states
+  come from DSH tokens.
+- Responsive layout: auto-fit card grid with `min(100%, 280px)` columns, `min-width: 0`,
+  `overflow-wrap: anywhere`, cards of one row stretched to equal height with their footer
+  pushed down, and media queries at 900 and 640 px. Checked at 1280, 1024, 768 and 480 px —
+  nothing overflows.
+- Overlay pet behaviour, settings and handlers are unchanged.
+
 ## 0.2.9 — 2026-09-29
 
 ### Added
